@@ -31,7 +31,7 @@ class InventoryAllocatorTest(unittest.TestCase):
 
 		order_items = { 'apple': 10 }
 		warehouse_inventories = [{ 'name': 'owd', 'inventory': { 'apple': 5 } }, 
-								 { 'name': 'dm', 'inventory': { 'apple': 5 }}]
+														{ 'name': 'dm', 'inventory': { 'apple': 5 }}]
 		expected_result = [{ 'owd': { 'apple': 5 }}, { 'dm': { 'apple': 5 } }]
 
 		self.assertEqual(inventory_allocator.shipment(order_items, warehouse_inventories), expected_result)
@@ -82,7 +82,7 @@ class InventoryAllocatorTest(unittest.TestCase):
 
 		order_items = { 'apple': 0, 'orange': 0, 'pikachu': 0 }
 		warehouse_inventories = [{ 'name': 'owd', 'inventory': { 'apple': 5 }}, 
-								 { 'name': 'dm', 'inventory': { 'orange': 5, 'pikachu': 100 }}]
+														{ 'name': 'dm', 'inventory': { 'orange': 5, 'pikachu': 100 }}]
 		expected_result = []
 
 		self.assertEqual(inventory_allocator.shipment(order_items, warehouse_inventories), expected_result)
@@ -93,7 +93,7 @@ class InventoryAllocatorTest(unittest.TestCase):
 
 		order_items = { 'apple': 2, 'pikachu': 1 }
 		warehouse_inventories = [{ 'name': 'owd', 'inventory': { 'apple': 5 }}, 
-								 { 'name': 'dm', 'inventory': { 'orange': 5}}]
+														{ 'name': 'dm', 'inventory': { 'orange': 5}}]
 		expected_result = [{ 'owd': { 'apple': 2 }}]
 
 		self.assertEqual(inventory_allocator.shipment(order_items, warehouse_inventories), expected_result)
@@ -105,15 +105,15 @@ class InventoryAllocatorTest(unittest.TestCase):
 
 		order_items = { 'apple': 10, 'pikachu': 3, 'soccer ball': 2 }
 		warehouse_inventories = [{ 'name': 'juventus', 'inventory': { 'apple': 0, 'pear': 10 }},
-								 { 'name': 'barcelona', 'inventory': { 'apple': 5, 'soccer ball': 2}}, 
-								 { 'name': 'real madrid', 'inventory': { 'apple': 2 }}, 
-								 { 'name': 'chelsea', 'inventory': { 'apple': 0, 'pikachu': 4 }},
-								 { 'name': 'arsenal', 'inventory': { 'banana': 0 }},
-								 { 'name': 'liverpool', 'inventory': { 'apple': 6}}]
+														{ 'name': 'barcelona', 'inventory': { 'apple': 5, 'soccer ball': 2}}, 
+														{ 'name': 'real madrid', 'inventory': { 'apple': 2 }}, 
+														{ 'name': 'chelsea', 'inventory': { 'apple': 0, 'pikachu': 4 }},
+														{ 'name': 'arsenal', 'inventory': { 'banana': 0 }},
+														{ 'name': 'liverpool', 'inventory': { 'apple': 6}}]
 		expected_result = [{ 'barcelona': { 'apple': 5, 'soccer ball': 2 }},
-						   { 'real madrid': { 'apple': 2 }},
-						   { 'chelsea': { 'pikachu': 3 }},
-						   { 'liverpool': { 'apple': 3 }}]
+											{ 'real madrid': { 'apple': 2 }},
+											{ 'chelsea': { 'pikachu': 3 }},
+											{ 'liverpool': { 'apple': 3 }}]
 
 		self.assertEqual(inventory_allocator.shipment(order_items, warehouse_inventories), expected_result)
 
@@ -123,10 +123,10 @@ class InventoryAllocatorTest(unittest.TestCase):
 
 		order_items = { 'apple': 10, 'pikachu': 7 }
 		warehouse_inventories = [{ 'name': 'canada', 'inventory': { 'apple': 3, 'pikachu': 5 }},
-								 { 'name': 'usa', 'inventory': { 'apple': 20, 'pikachu': 0}}, 
-								 { 'name': 'korea', 'inventory': { 'apple': 2 }}]
+														{ 'name': 'usa', 'inventory': { 'apple': 20, 'pikachu': 0}}, 
+														{ 'name': 'korea', 'inventory': { 'apple': 2 }}]
 		expected_result = [{ 'canada': { 'apple': 3, 'pikachu': 5 }},
-						   { 'usa': { 'apple': 7 }}]
+											{ 'usa': { 'apple': 7 }}]
 
 		self.assertEqual(inventory_allocator.shipment(order_items, warehouse_inventories), expected_result)
 

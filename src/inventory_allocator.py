@@ -2,9 +2,9 @@ import copy
 
 class InventoryAllocator:
 
-	# computes and returns the best way an order can be shipped
+	# Computes and returns the best way an order can be shipped
 	# given inventory across a set of warehouses.
-	# assume warehouses are pre-sorted based on cost. So the first warehouse
+	# Assume warehouses are pre-sorted based on cost. So the first warehouse
 	# is less expensive to ship than from the second warehouse.
 
 	def shipment(self, order_items, warehouse_inventories):
